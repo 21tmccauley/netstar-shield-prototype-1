@@ -199,10 +199,6 @@ The following features are currently simulated for demonstration purposes:
 - Whitelist/blacklist management
 - Performance optimizations
 
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## License
 
 This project is licensed under the MIT License.
@@ -214,6 +210,3 @@ This project is licensed under the MIT License.
 - Color system inspired by modern security practices
 - UI/UX designed for accessibility and user-friendliness
 
----
-
-**Note:** This is a prototype demonstration. The security scanning is currently simulated. For production use, integrate with real security APIs and implement proper threat detection algorithms.

@@ -1,10 +1,14 @@
 import { Button } from "@/components/ui/button"
-import { HelpCircle } from "lucide-react"
 
 export function SettingsTab({ mode, onBack, onStartTour }) {
   return (
     <div className="p-6 space-y-4">
-      <Button variant="ghost" size="sm" onClick={onBack} className="mb-4">
+      <Button 
+        variant="ghost" 
+        size="sm" 
+        onClick={onBack} 
+        className={`mb-4 ${mode === "dark" ? "text-slate-200 hover:text-white" : "text-slate-700 hover:text-slate-900"}`}
+      >
         ← Back
       </Button>
       
@@ -18,9 +22,6 @@ export function SettingsTab({ mode, onBack, onStartTour }) {
           className={`border-2 rounded-2xl p-5 ${mode === "dark" ? "border-brand-700 bg-gradient-to-br from-brand-900/30 to-slate-800/30" : "border-brand-300 bg-gradient-to-br from-brand-50 to-white"}`}
         >
           <div className="flex items-start gap-3">
-            <div className={`p-3 rounded-xl ${mode === "dark" ? "bg-brand-800/50" : "bg-brand-100"}`}>
-              <HelpCircle className={`h-6 w-6 ${mode === "dark" ? "text-brand-400" : "text-brand-600"}`} />
-            </div>
             <div className="flex-1">
               <h3 className={`font-medium mb-2 ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
                 Help & Tutorial

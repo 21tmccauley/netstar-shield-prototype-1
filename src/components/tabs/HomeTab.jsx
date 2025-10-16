@@ -12,6 +12,8 @@ import {
   AlertCircle,
   Sparkles,
 } from "lucide-react"
+import { getStatusFromScore, getStatusMessage } from "@/lib/securityUtils"
+import { getColorClasses } from "@/lib/themeUtils"
 
 export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
   const [currentUrl, setCurrentUrl] = useState("")
@@ -49,50 +51,6 @@ export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
       setCurrentUrl("example.com");
     }
   }, []);
-
-  // Helper function to determine status based on score
-  const getStatusFromScore = (score) => {
-    if (score >= 90) return "excellent"
-    if (score >= 75) return "good"
-    if (score >= 60) return "moderate"
-    return "poor"
-  }
-
-  // Helper function to get color classes based on status
-  const getColorClasses = (status, mode) => {
-    switch (status) {
-      case "excellent":
-        return {
-          bg: "bg-green-100 dark:bg-green-900/30",
-          text: "text-green-600 dark:text-green-400",
-          gradient: "from-green-500 to-emerald-500"
-        }
-      case "good":
-        return {
-          bg: "bg-blue-100 dark:bg-blue-900/30",
-          text: "text-blue-600 dark:text-blue-400",
-          gradient: "from-blue-500 to-cyan-500"
-        }
-      case "moderate":
-        return {
-          bg: "bg-amber-100 dark:bg-amber-900/30",
-          text: "text-amber-600 dark:text-amber-400",
-          gradient: "from-amber-500 to-orange-500"
-        }
-      case "poor":
-        return {
-          bg: "bg-red-100 dark:bg-red-900/30",
-          text: "text-red-600 dark:text-red-400",
-          gradient: "from-red-500 to-pink-500"
-        }
-      default:
-        return {
-          bg: "bg-gray-100 dark:bg-gray-900/30",
-          text: "text-gray-600 dark:text-gray-400",
-          gradient: "from-gray-500 to-slate-500"
-        }
-    }
-  }
 
   // 🔧 CHANGE THESE SCORES TO TEST DIFFERENT INDICATOR COLORS (0-100)
   const indicators = [
@@ -182,13 +140,7 @@ export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
                   {indicator.name}
                 </div>
                 <div className={`text-xs ${mode === "dark" ? "text-slate-300" : "text-slate-600"}`}>
-                  {status === "excellent"
-                    ? "Looking great!"
-                    : status === "good"
-                      ? "All good"
-                      : status === "moderate"
-                        ? "Could be better"
-                        : "Needs attention"}
+                  {getStatusMessage(status)}
                 </div>
               </div>
               {status === "excellent" || status === "good" ? (

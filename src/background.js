@@ -1,6 +1,6 @@
 // Background service worker for NetSTAR extension
 
-// 🔧 TESTING: Set a specific score here (null = random scores)
+// TESTING: Set a specific score here (null = random scores)
 // Examples: 95 (green), 70 (amber), 45 (red), null (random)
 const TEST_SCORE = 50;
 

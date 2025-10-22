@@ -36,9 +36,17 @@ graph LR
     B -- 1. Requests Analysis (URL/IP) --> G;
     G -- 2. Sends Final Scores & Gate Status --> B;
 
-    style BrowserExtension fill:#ccf,stroke:#66a,stroke-width:2px
-    style Browser fill:#eee,stroke:#999,stroke-width:2px
-    style NetSTARBackend fill:#cfc,stroke:#6a6,stroke-width:2px
+    style BrowserExtension fill:#e1f5fe,stroke:#1976d2,stroke-width:2px,color:#000
+    style Browser fill:#f5f5f5,stroke:#666,stroke-width:2px,color:#000
+    style NetSTARBackend fill:#e8f5e8,stroke:#388e3c,stroke-width:2px,color:#000
+    style A fill:#fff,stroke:#1976d2,stroke-width:2px,color:#000
+    style B fill:#fff,stroke:#1976d2,stroke-width:2px,color:#000
+    style C fill:#fff,stroke:#666,stroke-width:2px,color:#000
+    style D fill:#fff,stroke:#666,stroke-width:2px,color:#000
+    style E fill:#fff,stroke:#666,stroke-width:2px,color:#000
+    style F fill:#fff,stroke:#666,stroke-width:2px,color:#000
+    style G fill:#fff,stroke:#388e3c,stroke-width:2px,color:#000
+    style H fill:#fff,stroke:#388e3c,stroke-width:2px,color:#000
 ```
 
 ## Data Flow Architecture

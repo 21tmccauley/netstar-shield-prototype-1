@@ -8,7 +8,7 @@ This document outlines the future architecture and design patterns for the NetST
 graph LR
     subgraph Browser Extension [Browser Extension]
         direction TB
-        A[Popup UI (React)]
+        A[Popup UI - React]
         B(Background Service Worker)
         A <-->|chrome.runtime.sendMessage| B;
     end
@@ -17,7 +17,7 @@ graph LR
         direction TB
         C(Current Tab URL / User Input)
         D(Extension Icon)
-        E[Browser Storage (chrome.storage.local)]
+        E[Browser Storage - chrome.storage.local]
         F[User Interface Display]
 
         B -- Reads --> C;

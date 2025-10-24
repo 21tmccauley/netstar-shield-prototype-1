@@ -97,7 +97,7 @@ export function Tour({ mode, isActive, onClose, currentTab, onNavigate, onStepCh
   const getTooltipPosition = () => {
     switch (currentStepData.position) {
       case "top":
-        return "top-3 left-1/2 transform -translate-x-1/2"
+        return "top-3 left-0 right-0"
       case "bottom":
         return "bottom-0 left-0 right-0"
       case "center":
@@ -111,8 +111,8 @@ export function Tour({ mode, isActive, onClose, currentTab, onNavigate, onStepCh
     }
   }
 
-  // Determine if we should use full width (for bottom) or max-width
-  const isFullWidth = currentStepData.position === "bottom"
+  // Determine if we should use full width (for bottom/top) or max-width
+  const isFullWidth = currentStepData.position === "bottom" || currentStepData.position === "top"
 
   return (
     <>
@@ -128,24 +128,13 @@ export function Tour({ mode, isActive, onClose, currentTab, onNavigate, onStepCh
               z-index: 50 !important;
               box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.8), 0 0 20px 4px rgba(99, 102, 241, 0.4) !important;
               border-radius: 12px !important;
-              animation: pulse-glow 2s ease-in-out infinite;
-              transition: none !important;
-            }
-            
-            @keyframes pulse-glow {
-              0%, 100% {
-                box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.8), 0 0 20px 4px rgba(99, 102, 241, 0.4);
-              }
-              50% {
-                box-shadow: 0 0 0 4px rgba(99, 102, 241, 1), 0 0 30px 6px rgba(99, 102, 241, 0.6);
-              }
             }
           `}
         </style>
       )}
 
       {/* Tour Tooltip - Dynamic positioning */}
-      <div className={`fixed z-[60] ${isFullWidth ? 'p-3' : ''} ${getTooltipPosition()}`}>
+      <div className={`fixed z-[60] ${isFullWidth ? 'px-3' : ''} ${getTooltipPosition()}`}>
         <div
           className={`rounded-xl p-4 shadow-2xl ${isFullWidth ? 'max-w-md mx-auto' : 'w-80'} ${
             mode === "dark" 

@@ -44,7 +44,7 @@ export function ScanTab({ mode, onScanComplete }) {
             placeholder="https://example.com"
             value={scanUrl}
             onChange={(e) => setScanUrl(e.target.value)}
-            className={`rounded-xl ${mode === "dark" ? "bg-slate-800 border-slate-700" : "border-brand-200"}`}
+            className={`rounded-xl ${mode === "dark" ? "bg-slate-800 border-slate-700 text-white" : "border-brand-200 text-slate-900"}`}
           />
           <p className={`text-xs mt-2 ${mode === "dark" ? "text-slate-300" : "text-slate-600"}`}>
             Tip: You can paste any URL or IP address

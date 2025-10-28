@@ -11,32 +11,32 @@ export function getColorClasses(status) {
   switch (status) {
     case "excellent":
       return {
-        bg: "bg-green-100 dark:bg-green-900/30",
-        text: "text-green-600 dark:text-green-400",
-        gradient: "from-green-500 to-emerald-500"
+        bg: "bg-lime-300 dark:bg-lime-500",
+        text: "text-black dark:text-black",
+        gradient: "from-lime-500 to-green-500"
       }
     case "good":
       return {
-        bg: "bg-blue-100 dark:bg-blue-900/30",
-        text: "text-blue-600 dark:text-blue-400",
+        bg: "bg-blue-300 dark:bg-blue-500",
+        text: "text-black dark:text-black",
         gradient: "from-blue-500 to-cyan-500"
       }
     case "moderate":
       return {
-        bg: "bg-amber-100 dark:bg-amber-900/30",
-        text: "text-amber-600 dark:text-amber-400",
-        gradient: "from-amber-500 to-orange-500"
+        bg: "bg-orange-300 dark:bg-orange-500",
+        text: "text-black dark:text-black",
+        gradient: "from-orange-500 to-red-500"
       }
     case "poor":
       return {
-        bg: "bg-red-100 dark:bg-red-900/30",
-        text: "text-red-600 dark:text-red-400",
+        bg: "bg-red-300 dark:bg-red-500",
+        text: "text-black dark:text-black",
         gradient: "from-red-500 to-pink-500"
       }
     default:
       return {
-        bg: "bg-gray-100 dark:bg-gray-900/30",
-        text: "text-gray-600 dark:text-gray-400",
+        bg: "bg-gray-300 dark:bg-gray-500",
+        text: "text-black dark:text-black",
         gradient: "from-gray-500 to-slate-500"
       }
   }
@@ -52,51 +52,51 @@ export function getStatusInfo(status) {
   switch (status) {
     case "excellent":
       return {
-        bgGradient: "from-green-900/30 to-emerald-900/30 dark:from-green-900/30 dark:to-emerald-900/30",
-        iconBg: "bg-green-100 dark:bg-green-900/50",
-        iconColor: "text-green-600 dark:text-green-400",
-        textColor: "text-green-700 dark:text-green-300",
-        scoreColor: "text-green-600 dark:text-green-400",
-        badgeBg: "bg-green-500",
+        bgGradient: "from-lime-500 to-green-500 dark:from-lime-500 dark:to-green-500",
+        iconBg: "bg-lime-200 dark:bg-lime-600",
+        iconColor: "text-lime-800 dark:text-lime-100",
+        textColor: "text-lime-800 dark:text-lime-200",
+        scoreColor: "text-black dark:text-black",
+        badgeBg: "bg-lime-500",
         message: "Everything looks perfect!"
       }
     case "good":
       return {
-        bgGradient: "from-blue-900/30 to-cyan-900/30 dark:from-blue-900/30 dark:to-cyan-900/30",
-        iconBg: "bg-blue-100 dark:bg-blue-900/50",
-        iconColor: "text-blue-600 dark:text-blue-400",
-        textColor: "text-blue-700 dark:text-blue-300",
-        scoreColor: "text-blue-600 dark:text-blue-400",
+        bgGradient: "from-blue-500 to-cyan-500 dark:from-blue-500 dark:to-cyan-500",
+        iconBg: "bg-blue-200 dark:bg-blue-600",
+        iconColor: "text-blue-800 dark:text-blue-100",
+        textColor: "text-blue-800 dark:text-blue-200",
+        scoreColor: "text-black dark:text-black",
         badgeBg: "bg-blue-500",
         message: "Looking good!"
       }
     case "moderate":
       return {
-        bgGradient: "from-amber-900/30 to-orange-900/30 dark:from-amber-900/30 dark:to-orange-900/30",
-        iconBg: "bg-amber-100 dark:bg-amber-900/50",
-        iconColor: "text-amber-600 dark:text-amber-400",
-        textColor: "text-amber-700 dark:text-amber-300",
-        scoreColor: "text-amber-600 dark:text-amber-400",
-        badgeBg: "bg-amber-500",
+        bgGradient: "from-orange-500 to-red-500 dark:from-orange-500 dark:to-red-500",
+        iconBg: "bg-orange-200 dark:bg-orange-600",
+        iconColor: "text-orange-800 dark:text-orange-100",
+        textColor: "text-orange-800 dark:text-orange-200",
+        scoreColor: "text-black dark:text-black",
+        badgeBg: "bg-orange-500",
         message: "Could be improved"
       }
     case "poor":
       return {
-        bgGradient: "from-red-900/30 to-pink-900/30 dark:from-red-900/30 dark:to-pink-900/30",
-        iconBg: "bg-red-100 dark:bg-red-900/50",
-        iconColor: "text-red-600 dark:text-red-400",
-        textColor: "text-red-700 dark:text-red-300",
-        scoreColor: "text-red-600 dark:text-red-400",
+        bgGradient: "from-red-500 to-pink-500 dark:from-red-500 dark:to-pink-500",
+        iconBg: "bg-red-200 dark:bg-red-600",
+        iconColor: "text-red-800 dark:text-red-100",
+        textColor: "text-red-800 dark:text-red-200",
+        scoreColor: "text-black dark:text-black",
         badgeBg: "bg-red-500",
         message: "Needs attention"
       }
     default:
       return {
-        bgGradient: "from-gray-900/30 to-slate-900/30 dark:from-gray-900/30 dark:to-slate-900/30",
-        iconBg: "bg-gray-100 dark:bg-gray-900/50",
-        iconColor: "text-gray-600 dark:text-gray-400",
-        textColor: "text-gray-700 dark:text-gray-300",
-        scoreColor: "text-gray-600 dark:text-gray-400",
+        bgGradient: "from-gray-500 to-slate-500 dark:from-gray-500 dark:to-slate-500",
+        iconBg: "bg-gray-200 dark:bg-gray-600",
+        iconColor: "text-gray-800 dark:text-gray-100",
+        textColor: "text-gray-800 dark:text-gray-200",
+        scoreColor: "text-black dark:text-black",
         badgeBg: "bg-gray-500",
         message: "Unknown status"
       }

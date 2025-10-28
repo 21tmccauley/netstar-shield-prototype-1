@@ -122,15 +122,15 @@ export function DetailsTab({ mode, onBack, indicator }) {
         variant="ghost" 
         size="sm" 
         onClick={onBack} 
-        className={`mb-4 ${mode === "dark" ? "text-slate-200 hover:text-white" : "text-slate-700 hover:text-slate-900"}`}
+        className={`mb-4 neo-border neo-shadow hover:neo-shadow-pressed ${mode === "dark" ? "text-slate-200 hover:text-white" : "text-slate-700 hover:text-slate-900"}`}
       >
         ← Back
       </Button>
 
       {/* Friendly detailed card */}
-      <div className={`rounded-2xl p-5 mb-4 bg-gradient-to-br ${statusInfo.bgGradient}`}>
+      <div className={`rounded-2xl p-5 mb-4 bg-gradient-to-br ${statusInfo.bgGradient} neo-border neo-shadow-lg`}>
         <div className="flex items-center gap-3 mb-4">
-          <div className={`p-3 rounded-xl ${statusInfo.iconBg}`}>
+          <div className={`p-3 rounded-xl ${statusInfo.iconBg} neo-border`}>
             <Lock className={`h-6 w-6 ${statusInfo.iconColor}`} />
           </div>
           <div>
@@ -147,29 +147,29 @@ export function DetailsTab({ mode, onBack, indicator }) {
           <div className={`text-4xl font-bold ${statusInfo.scoreColor}`}>
             {indicator?.score || 100}
           </div>
-          <Badge className={`${statusInfo.badgeBg} text-white`}>
+          <Badge className={`${statusInfo.badgeBg} text-white neo-border`}>
             {status.charAt(0).toUpperCase() + status.slice(1)}
           </Badge>
         </div>
       </div>
 
       {/* Educational insights */}
-      <div className="space-y-3">
+      <div className="space-y-4">
         <h4
-          className={`text-sm font-semibold flex items-center gap-2 ${mode === "dark" ? "text-white" : "text-brand-800"}`}
+          className={`text-lg font-bold flex items-center gap-2 ${mode === "dark" ? "text-white" : "text-slate-900"}`}
         >
-          <Info className="h-4 w-4" />
-          What This Means
+          <Info className="h-5 w-5" />
+          What We Checked
         </h4>
 
         {educationalItems.map((item, index) => (
-          <div key={index} className={`p-4 rounded-xl ${mode === "dark" ? "bg-slate-800/50" : "bg-white"}`}>
-            <div className="flex gap-3">
-              <div>
-                <div className={`text-sm font-medium mb-1 ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
+          <div key={index} className={`p-5 rounded-2xl neo-border neo-shadow ${mode === "dark" ? "bg-slate-800" : "bg-white"}`}>
+            <div className="flex gap-4">
+              <div className="flex-1">
+                <div className={`text-base font-bold mb-2 ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
                   {item.title}
                 </div>
-                <div className={`text-xs ${mode === "dark" ? "text-slate-300" : "text-slate-600"}`}>
+                <div className={`text-sm font-medium leading-relaxed ${mode === "dark" ? "text-slate-200" : "text-slate-700"}`}>
                   {item.description}
                 </div>
               </div>

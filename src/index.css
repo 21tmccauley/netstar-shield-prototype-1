@@ -29,30 +29,30 @@
 }
 
 .dark {
-  /* Dark Mode - Sophisticated Dark Blue Neo-Brutalist Colors */
-  --background: #0F1419;
-  --secondary-background: #1A2332;
-  --foreground: #E8F4FD;
-  --main-foreground: #0F1419;
+  /* Dark Mode - Charcoal Grey Neo-Brutalist Colors */
+  --background: #2C2C2C;
+  --secondary-background: #3A3A3A;
+  --foreground: #E8E8E8;
+  --main-foreground: #2C2C2C;
   --main: #60A5FA;
-  --border: #E8F4FD;
+  --border: #000000;
   --ring: #60A5FA;
-  --overlay: rgba(232, 244, 253, 0.8);
+  --overlay: rgba(232, 232, 232, 0.8);
   --shadow: 4px 4px 0px 0px var(--border);
   
-  /* Chart colors - Adjusted for dark blue theme */
+  /* Chart colors - Adjusted for charcoal theme */
   --chart-1: #F59E0B;
   --chart-2: #60A5FA;
   --chart-3: #10B981;
-  --chart-4: #E8F4FD;
-  --chart-5: #1A2332;
-  --chart-active-dot: #E8F4FD;
+  --chart-4: #E8E8E8;
+  --chart-5: #3A3A3A;
+  --chart-active-dot: #E8E8E8;
   
-  /* Accent colors - Complementary to dark blue */
+  /* Accent colors - Complementary to charcoal theme */
   --accent-yellow: #F59E0B;
   --accent-green: #10B981;
   --accent-orange: #F59E0B;
-  --accent-purple: #E8F4FD;
+  --accent-purple: #E8E8E8;
   --accent-pink: #EC4899;
 }
 
@@ -103,8 +103,8 @@
 
   .dark body {
     background-image: 
-      linear-gradient(rgba(232, 244, 253, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 244, 253, 0.08) 1px, transparent 1px);
+      linear-gradient(rgba(232, 232, 232, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 232, 232, 0.08) 1px, transparent 1px);
   }
 
   h1, h2, h3, h4, h5, h6{
@@ -143,8 +143,8 @@
   
   .dark .bg-grid {
     background-image: 
-      linear-gradient(rgba(232, 244, 253, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 244, 253, 0.06) 1px, transparent 1px);
+      linear-gradient(rgba(232, 232, 232, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 232, 232, 0.06) 1px, transparent 1px);
   }
   
   .bg-grid-sm {
@@ -156,8 +156,8 @@
   
   .dark .bg-grid-sm {
     background-image: 
-      linear-gradient(rgba(232, 244, 253, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 244, 253, 0.05) 1px, transparent 1px);
+      linear-gradient(rgba(232, 232, 232, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 232, 232, 0.05) 1px, transparent 1px);
   }
   
   .bg-grid-lg {
@@ -169,8 +169,8 @@
   
   .dark .bg-grid-lg {
     background-image: 
-      linear-gradient(rgba(232, 244, 253, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 244, 253, 0.08) 1px, transparent 1px);
+      linear-gradient(rgba(232, 232, 232, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(232, 232, 232, 0.08) 1px, transparent 1px);
   }
   
   /* High contrast accent color utilities */

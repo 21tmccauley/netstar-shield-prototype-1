@@ -1,7 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 :root {
-  /* Light Mode - Neo-Brutalist Colors */
+  /* Main colors */
   --background: #F5F5F5;
   --secondary-background: #FFFFFF;
   --foreground: #333333;
@@ -26,34 +27,6 @@
   --accent-orange: #FF4F00;
   --accent-purple: #333333;
   --accent-pink: #FF4F00;
-}
-
-.dark {
-  /* Dark Mode - Sophisticated Dark Blue Neo-Brutalist Colors */
-  --background: #0F1419;
-  --secondary-background: #1A2332;
-  --foreground: #E8F4FD;
-  --main-foreground: #0F1419;
-  --main: #60A5FA;
-  --border: #E8F4FD;
-  --ring: #60A5FA;
-  --overlay: rgba(232, 244, 253, 0.8);
-  --shadow: 4px 4px 0px 0px var(--border);
-  
-  /* Chart colors - Adjusted for dark blue theme */
-  --chart-1: #F59E0B;
-  --chart-2: #60A5FA;
-  --chart-3: #10B981;
-  --chart-4: #E8F4FD;
-  --chart-5: #1A2332;
-  --chart-active-dot: #E8F4FD;
-  
-  /* Accent colors - Complementary to dark blue */
-  --accent-yellow: #F59E0B;
-  --accent-green: #10B981;
-  --accent-orange: #F59E0B;
-  --accent-purple: #E8F4FD;
-  --accent-pink: #EC4899;
 }
 
 @theme inline {
@@ -101,12 +74,6 @@
     background-position: 0 0;
   }
 
-  .dark body {
-    background-image: 
-      linear-gradient(rgba(232, 244, 253, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 244, 253, 0.08) 1px, transparent 1px);
-  }
-
   h1, h2, h3, h4, h5, h6{
     font-weight: var(--font-weight-bold);
   }
@@ -141,12 +108,6 @@
     background-size: 20px 20px;
   }
   
-  .dark .bg-grid {
-    background-image: 
-      linear-gradient(rgba(232, 244, 253, 0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 244, 253, 0.06) 1px, transparent 1px);
-  }
-  
   .bg-grid-sm {
     background-image: 
       linear-gradient(rgba(51, 51, 51, 0.08) 1px, transparent 1px),
@@ -154,23 +115,11 @@
     background-size: 16px 16px;
   }
   
-  .dark .bg-grid-sm {
-    background-image: 
-      linear-gradient(rgba(232, 244, 253, 0.05) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 244, 253, 0.05) 1px, transparent 1px);
-  }
-  
   .bg-grid-lg {
     background-image: 
       linear-gradient(rgba(51, 51, 51, 0.12) 1px, transparent 1px),
       linear-gradient(90deg, rgba(51, 51, 51, 0.12) 1px, transparent 1px);
     background-size: 24px 24px;
-  }
-  
-  .dark .bg-grid-lg {
-    background-image: 
-      linear-gradient(rgba(232, 244, 253, 0.08) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(232, 244, 253, 0.08) 1px, transparent 1px);
   }
   
   /* High contrast accent color utilities */

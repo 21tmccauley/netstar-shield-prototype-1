@@ -71,43 +71,39 @@ function Popup() {
   return (
     <div className={mode === "dark" ? "dark" : ""}>
       <div
-        className={`h-[500px] flex flex-col ${mode === "dark" ? "bg-gradient-to-b from-slate-900 to-brand-950" : "bg-gradient-to-b from-white to-brand-50"}`}
+        className="h-[500px] flex flex-col bg-background"
       >
         {/* Header */}
-        <div
-          className={`border-b ${mode === "dark" ? "border-brand-900/30 bg-slate-900/50" : "border-brand-200 bg-white/50"} backdrop-blur-sm`}
-        >
+        <div className="neo-border-b bg-secondary-background">
           <div className="px-4 py-3 flex items-center justify-between">
             <div>
-              <h1 className={`text-lg font-bold ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
+              <h1 className="text-lg font-bold text-foreground">
                 NetSTAR
               </h1>
-              <p className={`text-xs ${mode === "dark" ? "text-brand-300" : "text-brand-600"}`}>
+              <p className="text-xs text-foreground">
                 Security Guide
               </p>
             </div>
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-2">
               <Button
                 id="theme-toggle"
-                variant="ghost"
-                size="icon"
+                variant="outline"
+                size="icon-sm"
                 onClick={toggleMode}
-                className="rounded-full h-8 w-8"
               >
                 {mode === "light" ? (
-                  <Moon className="h-4 w-4 text-slate-700" />
+                  <Moon className="h-4 w-4 text-foreground" />
                 ) : (
-                  <Sun className="h-4 w-4 text-amber-300" />
+                  <Sun className="h-4 w-4 text-accent-yellow" />
                 )}
               </Button>
               <Button
                 id="settings-button"
-                variant="ghost"
-                size="icon"
+                variant="outline"
+                size="icon-sm"
                 onClick={() => setActiveTab("settings")}
-                className="rounded-full h-8 w-8"
               >
-                <Settings className={`h-4 w-4 ${mode === "dark" ? "text-slate-200" : "text-slate-700"}`} />
+                <Settings className="h-4 w-4 text-foreground" />
               </Button>
             </div>
           </div>
@@ -132,10 +128,8 @@ function Popup() {
 
         {/* Bottom Tab Navigation */}
         {activeTab !== "details" && activeTab !== "settings" && (
-          <div
-            className={`border-t ${mode === "dark" ? "border-brand-900/30 bg-slate-900/80" : "border-brand-200 bg-white/80"} backdrop-blur-sm`}
-          >
-            <div className="grid grid-cols-3 gap-1 p-2">
+          <div className="neo-border-t bg-secondary-background">
+            <div className="flex justify-between gap-1 p-2">
               {tabs.map((tab) => {
                 const Icon = tab.icon
                 const isActive = activeTab === tab.id
@@ -143,14 +137,10 @@ function Popup() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex flex-col items-center gap-1 p-2 rounded-xl transition-all ${
+                    className={`flex flex-col items-center px-5 py-3 transition-all neo-border ${
                       isActive
-                        ? mode === "dark"
-                          ? "bg-brand-900/50 text-brand-300"
-                          : "bg-brand-100 text-brand-700"
-                        : mode === "dark"
-                          ? "text-slate-400 hover:text-brand-300 hover:bg-slate-800/50"
-                          : "text-slate-600 hover:text-brand-600 hover:bg-brand-50"
+                        ? "bg-primary text-primary-foreground neo-shadow"
+                        : "bg-secondary-background text-foreground hover:bg-accent hover:text-accent-foreground"
                     }`}
                   >
                     <Icon className={`h-5 w-5 ${isActive ? "scale-110" : ""}`} />

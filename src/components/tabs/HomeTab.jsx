@@ -67,10 +67,10 @@ export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
     <div className="p-6">
       {/* Header with friendly greeting */}
       <div className="text-center mb-6">
-        <h2 className={`font-bold text-xl mb-1 ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
+        <h2 className="font-bold text-xl mb-1 text-foreground">
           You're Safe Here!
         </h2>
-        <p className={`text-sm ${mode === "dark" ? "text-slate-200" : "text-brand-600"}`}>
+        <p className="text-sm text-foreground">
           {currentUrl} is looking good
         </p>
       </div>
@@ -78,30 +78,28 @@ export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
       {/* Friendly Score Display */}
       <div
         id="security-score"
-        className={`rounded-2xl p-6 mb-6 ${mode === "dark" ? "bg-gradient-to-br from-brand-900/50 to-brand-accent-500/30" : "bg-gradient-to-br from-brand-100 to-brand-accent-400/20"}`}
+        className="p-6 mb-6 bg-secondary-background neo-border neo-shadow-lg"
       >
         <div className="text-center">
           <div className="inline-flex items-baseline gap-2 mb-2">
             <span className={`text-6xl font-bold bg-gradient-to-r ${getColorClasses(getStatusFromScore(safetyScore)).gradient} bg-clip-text text-transparent`}>
               {safetyScore}
             </span>
-            <span className={`text-2xl font-medium ${mode === "dark" ? "text-slate-100" : "text-brand-600"}`}>
+            <span className="text-2xl font-medium text-foreground">
               /100
             </span>
           </div>
-          <div className={`text-sm font-medium ${mode === "dark" ? "text-slate-100" : "text-brand-700"}`}>
+          <div className="text-sm font-medium text-foreground">
             Safety Score
           </div>
           <div className="flex items-center justify-center gap-1 mt-3">
             {[...Array(5)].map((_, i) => (
               <div
                 key={i}
-                className={`w-8 h-1.5 rounded-full ${
+                className={`w-8 h-1.5 ${
                   i < Math.floor(safetyScore / 20)
                     ? `bg-gradient-to-r ${getColorClasses(getStatusFromScore(safetyScore)).gradient}`
-                    : mode === "dark"
-                      ? "bg-slate-700"
-                      : "bg-brand-200"
+                    : "bg-border"
                 }`}
               />
             ))}
@@ -113,7 +111,7 @@ export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
       <div id="security-indicators" className="space-y-3">
         <button
           onClick={() => setShowIndicators(!showIndicators)}
-          className={`text-sm font-semibold mb-3 flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity ${mode === "dark" ? "text-white" : "text-brand-800"}`}
+          className="text-sm font-semibold mb-3 flex items-center gap-2 cursor-pointer hover:opacity-80 transition-opacity text-foreground"
         >
           <Sparkles className="h-4 w-4" />
           What We Checked
@@ -128,18 +126,16 @@ export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
             <button
               key={indicator.id}
               onClick={() => onNavigate("details", { ...indicator, status })}
-              className={`w-full flex items-center gap-3 p-4 rounded-xl transition-all hover:scale-[1.02] ${
-                mode === "dark" ? "bg-slate-800/50 hover:bg-slate-800" : "bg-white hover:shadow-md"
-              }`}
+              className="w-full flex items-center gap-3 p-4 transition-all hover:scale-[1.02] bg-secondary-background neo-border neo-shadow hover:neo-shadow-pressed"
             >
-              <div className={`p-2 rounded-lg ${colors.bg}`}>
+              <div className={`p-2 ${colors.bg} neo-border`}>
                 <Icon className={`h-4 w-4 ${colors.text}`} />
               </div>
               <div className="flex-1 text-left">
-                <div className={`text-sm font-medium ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
+                <div className="text-sm font-medium text-foreground">
                   {indicator.name}
                 </div>
-                <div className={`text-xs ${mode === "dark" ? "text-slate-300" : "text-slate-600"}`}>
+                <div className="text-xs text-foreground">
                   {getStatusMessage(status)}
                 </div>
               </div>

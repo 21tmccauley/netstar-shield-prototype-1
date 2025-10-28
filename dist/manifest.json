@@ -26,6 +26,9 @@
   },
   "web_accessible_resources": [
     {
+      "matches": [
+        "<all_urls>"
+      ],
       "resources": [
         "src/icons/icon-safe-16.png",
         "src/icons/icon-safe-48.png",
@@ -36,18 +39,6 @@
         "src/icons/icon-danger-16.png",
         "src/icons/icon-danger-48.png",
         "src/icons/icon-danger-128.png"
-      ],
-      "matches": [
-        "<all_urls>"
-      ]
-    },
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "resources": [
-        "**/*",
-        "*"
       ],
       "use_dynamic_url": false
     }

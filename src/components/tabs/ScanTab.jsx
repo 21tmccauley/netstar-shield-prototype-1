@@ -21,13 +21,13 @@ export function ScanTab({ mode, onScanComplete }) {
   return (
     <div className="p-6">
       <div className="text-center mb-6">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-brand-400 to-brand-accent-400 mb-3">
-          <Search className="h-8 w-8 text-white" />
+        <div className="inline-flex items-center justify-center w-16 h-16 bg-primary neo-border neo-shadow mb-3">
+          <Search className="h-8 w-8 text-primary-foreground" />
         </div>
-        <h2 className={`font-bold text-xl mb-1 ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
+        <h2 className="font-bold text-xl mb-1 text-foreground">
           Let's Check a Website
         </h2>
-        <p className={`text-sm ${mode === "dark" ? "text-slate-200" : "text-brand-600"}`}>
+        <p className="text-sm text-foreground">
           We'll help you stay safe online
         </p>
       </div>
@@ -35,7 +35,7 @@ export function ScanTab({ mode, onScanComplete }) {
       <div className="space-y-4">
         <div>
           <label
-            className={`text-sm font-medium mb-2 block ${mode === "dark" ? "text-white" : "text-brand-800"}`}
+            className="text-sm font-medium mb-2 block text-foreground"
           >
             Website address
           </label>
@@ -44,16 +44,16 @@ export function ScanTab({ mode, onScanComplete }) {
             placeholder="https://example.com"
             value={scanUrl}
             onChange={(e) => setScanUrl(e.target.value)}
-            className={`rounded-xl ${mode === "dark" ? "bg-slate-800 border-slate-700 text-white" : "border-brand-200 text-slate-900"}`}
+            className="neo-border"
           />
-          <p className={`text-xs mt-2 ${mode === "dark" ? "text-slate-300" : "text-slate-600"}`}>
+          <p className="text-xs mt-2 text-foreground">
             Tip: You can paste any URL or IP address
           </p>
         </div>
 
         {!isScanning ? (
           <Button
-            className="w-full bg-gradient-to-r from-brand-500 to-brand-accent-500 hover:from-brand-600 hover:to-brand-accent-500 text-white rounded-xl"
+            className="w-full"
             onClick={handleScan}
             disabled={!scanUrl}
           >
@@ -61,22 +61,20 @@ export function ScanTab({ mode, onScanComplete }) {
             Check This Site
           </Button>
         ) : (
-          <div
-            className={`p-8 rounded-2xl ${mode === "dark" ? "bg-gradient-to-br from-brand-900/30 to-brand-accent-500/20" : "bg-gradient-to-br from-brand-100 to-brand-accent-400/20"}`}
-          >
+          <div className="p-8 bg-secondary-background neo-border neo-shadow-lg">
             <div className="flex flex-col items-center gap-4">
               <div className="relative w-20 h-20">
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-500 to-brand-accent-500 rounded-full opacity-20 animate-ping"></div>
-                <div className="absolute inset-0 bg-gradient-to-r from-brand-500 to-brand-accent-500 rounded-full opacity-75 animate-pulse"></div>
+                <div className="absolute inset-0 bg-primary opacity-20 animate-ping"></div>
+                <div className="absolute inset-0 bg-primary opacity-75 animate-pulse"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Sparkles className="h-8 w-8 text-white" />
+                  <Sparkles className="h-8 w-8 text-primary-foreground" />
                 </div>
               </div>
               <div className="text-center">
-                <div className={`font-medium ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
+                <div className="font-medium text-foreground">
                   Checking security...
                 </div>
-                <div className={`text-sm ${mode === "dark" ? "text-slate-200" : "text-brand-600"}`}>
+                <div className="text-sm text-foreground">
                   This will just take a moment
                 </div>
               </div>
@@ -86,7 +84,7 @@ export function ScanTab({ mode, onScanComplete }) {
 
         {/* Friendly recent scans */}
         <div className="mt-6">
-          <h3 className={`text-sm font-semibold mb-3 ${mode === "dark" ? "text-white" : "text-brand-800"}`}>
+          <h3 className="text-sm font-semibold mb-3 text-foreground">
             Recently Checked
           </h3>
           <div className="space-y-2">
@@ -97,13 +95,11 @@ export function ScanTab({ mode, onScanComplete }) {
             ].map((site) => (
               <button
                 key={site.url}
-                className={`w-full flex items-center gap-3 p-3 rounded-xl transition-all hover:scale-[1.02] ${
-                  mode === "dark" ? "bg-slate-800/50 hover:bg-slate-800" : "bg-white hover:shadow-md"
-                }`}
+                className="w-full flex items-center gap-3 p-3 transition-all hover:scale-[1.02] bg-secondary-background neo-border neo-shadow hover:neo-shadow-pressed"
                 onClick={() => setScanUrl(`https://${site.url}`)}
               >
                 <div className="text-xl">{site.safe ? "✓" : "⚠️"}</div>
-                <span className={`text-sm flex-1 text-left ${mode === "dark" ? "text-white" : "text-slate-900"}`}>
+                <span className="text-sm flex-1 text-left text-foreground">
                   {site.url}
                 </span>
                 <Badge variant={site.safe ? "default" : "destructive"} className="text-xs">

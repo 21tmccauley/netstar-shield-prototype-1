@@ -15,7 +15,7 @@ export function AlertsTab({ mode }) {
             We found signs of phishing and malware. We recommend leaving this site to protect your information.
           </div>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col gap-2">
           <Button size="sm" className="flex-1 bg-white text-red-600 hover:bg-red-50">
             Take Me Back
           </Button>

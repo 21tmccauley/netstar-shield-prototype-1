@@ -55,18 +55,18 @@ NetSTAR is a Chrome extension (Manifest V3) that provides real-time security ana
                     │
         ┌───────────┴───────────┐
         │                       │
-┌───────▼────────┐    ┌─────────▼─────────┐
-│ Background.js  │    │   Popup.jsx       │
+┌───────▼────────┐    ┌─────────▼──────────┐
+│ Background.js  │    │   Popup.jsx        │
 │ (Service       │    │   (React UI)       │
 │  Worker)       │    │                    │
-│                │    │  ┌──────────────┐ │
+│                │    │  ┌───────────────┐ │
 │ - Monitors     │◄───┤  │ Tab Components│ │
 │   tabs         │    │  │ - HomeTab     │ │
 │ - Performs     │    │  │ - ScanTab     │ │
-│   scans        │    │  │ - AlertsTab  │ │
-│ - Updates icon │    │  │ - DetailsTab │ │
-│                │    │  └──────────────┘ │
-└────────────────┘    └───────────────────┘
+│   scans        │    │  │ - AlertsTab   │ │
+│ - Updates icon │    │  │ - DetailsTab  │ │
+│                │    │  └───────────────┘ │
+└────────────────┘    └────────────────────┘
 ```
 
 ---

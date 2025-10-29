@@ -14,6 +14,18 @@ import {
 } from "lucide-react"
 import { getStatusFromScore, getStatusMessage } from "@/lib/securityUtils"
 import { getColorClasses } from "@/lib/themeUtils"
+import { DEFAULT_INDICATOR_DATA } from "@/lib/constants"
+
+// Icon mapping for indicators
+const INDICATOR_ICONS = {
+  cert: Shield,
+  connection: Lock,
+  domain: Globe,
+  credentials: Key,
+  ip: Server,
+  dns: FileText,
+  whois: FileText,
+}
 
 export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
   const [currentUrl, setCurrentUrl] = useState("")
@@ -52,16 +64,11 @@ export function HomeTab({ mode, onNavigate, forceShowIndicators }) {
     }
   }, []);
 
-  // 🔧 CHANGE THESE SCORES TO TEST DIFFERENT INDICATOR COLORS (0-100)
-  const indicators = [
-    { id: "cert", name: "Certificate Health", score: 95, icon: Shield },
-    { id: "connection", name: "Connection Security", score: 100, icon: Lock },
-    { id: "domain", name: "Domain Reputation", score: 78, icon: Globe },
-    { id: "credentials", name: "Credential Safety", score: 85, icon: Key },
-    { id: "ip", name: "IP Reputation", score: 92, icon: Server },
-    { id: "dns", name: "DNS Record Health", score: 88, icon: FileText },
-    { id: "whois", name: "WHOIS Pattern", score: 71, icon: FileText },
-  ]
+  // Map indicator data with icons
+  const indicators = DEFAULT_INDICATOR_DATA.map(data => ({
+    ...data,
+    icon: INDICATOR_ICONS[data.id]
+  }))
 
   return (
     <div className="p-6">

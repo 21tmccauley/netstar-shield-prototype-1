@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Search, Shield, Sparkles } from "lucide-react"
+import { DEFAULT_RECENT_SCANS } from "@/lib/constants"
 
 export function ScanTab({ mode, onScanComplete }) {
   const [scanUrl, setScanUrl] = useState("")
@@ -90,11 +91,7 @@ export function ScanTab({ mode, onScanComplete }) {
             Recently Checked
           </h3>
           <div className="space-y-2">
-            {[
-              { url: "github.com", safe: true },
-              { url: "google.com", safe: true },
-              { url: "amazon.com", safe: true },
-            ].map((site) => (
+            {DEFAULT_RECENT_SCANS.map((site) => (
               <button
                 key={site.url}
                 className={`w-full flex items-center gap-3 p-3 rounded-xl transition-all hover:scale-[1.02] ${

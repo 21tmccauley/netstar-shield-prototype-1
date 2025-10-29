@@ -3,6 +3,17 @@
  */
 
 /**
+ * Theme mode helper - returns value based on current theme mode
+ * @param {string} mode - Current theme mode: "light" or "dark"
+ * @param {string|object} lightValue - Value to return for light mode
+ * @param {string|object} darkValue - Value to return for dark mode
+ * @returns {string|object} The appropriate value based on theme mode
+ */
+export function themeValue(mode, lightValue, darkValue) {
+  return mode === "dark" ? darkValue : lightValue
+}
+
+/**
  * Gets color classes based on security status for use in indicators
  * @param {string} status - Status: "excellent", "good", "moderate", or "poor"
  * @returns {object} Object with bg, text, and gradient color classes

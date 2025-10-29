@@ -7,7 +7,8 @@ import { AlertsTab } from "@/components/tabs/AlertsTab"
 import { SettingsTab } from "@/components/tabs/SettingsTab"
 import { Tour } from "@/components/Tour"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Home, Search, Shield, Bell, Settings } from "lucide-react"
+import { Home, Search, Shield, Bell, Settings } from "lucide-react"
+import { ThemeToggleIcon } from "@/components/ThemeToggleIcon"
 import "@/index.css"
 
 function Popup() {
@@ -68,6 +69,15 @@ function Popup() {
     { id: "alerts", label: "Alerts", icon: Bell },
   ]
 
+  // Helper function to get tab button classes
+  const getTabButtonClasses = (isActive) => {
+    const baseClasses = "flex flex-col items-center gap-1 p-2 rounded-xl transition-all"
+    if (isActive) {
+      return `${baseClasses} ${mode === "dark" ? "bg-brand-900/50 text-brand-300" : "bg-brand-100 text-brand-700"}`
+    }
+    return `${baseClasses} ${mode === "dark" ? "text-slate-400 hover:text-brand-300 hover:bg-slate-800/50" : "text-slate-600 hover:text-brand-600 hover:bg-brand-50"}`
+  }
+
   return (
     <div className={mode === "dark" ? "dark" : ""}>
       <div
@@ -94,11 +104,7 @@ function Popup() {
                 onClick={toggleMode}
                 className="rounded-full h-8 w-8"
               >
-                {mode === "light" ? (
-                  <Moon className="h-4 w-4 text-slate-700" />
-                ) : (
-                  <Sun className="h-4 w-4 text-amber-300" />
-                )}
+                <ThemeToggleIcon mode={mode} />
               </Button>
               <Button
                 id="settings-button"
@@ -143,15 +149,7 @@ function Popup() {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex flex-col items-center gap-1 p-2 rounded-xl transition-all ${
-                      isActive
-                        ? mode === "dark"
-                          ? "bg-brand-900/50 text-brand-300"
-                          : "bg-brand-100 text-brand-700"
-                        : mode === "dark"
-                          ? "text-slate-400 hover:text-brand-300 hover:bg-slate-800/50"
-                          : "text-slate-600 hover:text-brand-600 hover:bg-brand-50"
-                    }`}
+                    className={getTabButtonClasses(isActive)}
                   >
                     <Icon className={`h-5 w-5 ${isActive ? "scale-110" : ""}`} />
                     <span className="text-xs font-medium">{tab.label}</span>
